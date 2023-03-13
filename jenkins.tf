@@ -3,7 +3,7 @@ module "jenkins_sg" {
 
   name        = "Jenkins-SG"
   description = "Security group for jenkins instance"
-  vpc_id      = "vpc-0ad3d42013facd03d"
+  vpc_id      = "vpc-036ead6012923bb68"
   ingress_cidr_blocks      = ["0.0.0.0/0"]
   ingress_rules            = ["http-80-tcp"]
   egress_rules		   = ["all-all"]
@@ -19,7 +19,7 @@ module "ec2_instance" {
   key_name               = "vockey"
   monitoring             = true
   vpc_security_group_ids = [module.jenkins_sg.security_group_id]
-  subnet_id              = "subnet-05f2f82fe398d0f1a"
+  subnet_id              = "subnet-0fc3fd8c018e87e07"
   user_data              = file("./dependencias.sh")
   iam_instance_profile   = "LabInstanceProfile"
 
